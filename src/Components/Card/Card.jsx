@@ -1,18 +1,18 @@
 import React from "react";
 import hero from "../data.json"
-function Card() {
+import '../../style/App.css'
+function Card(props) {
+   const { name, alterego, friends, url, occupation } = props;
    return (
-      hero.map((item) => (
-         <>
-            <p>{item.name}</p>
-            <p>{item.universe}</p>
-            <p>{item.alterego}</p>
-            <p>{item.occupation}</p>
-            <p>{item.friends}</p>
-            <p>{item.superpowers}</p>
-            <img src={item.url} />
-         </>
-      ))
+      <><div className="content">
+         <p>Имя: {name}</p>
+         <p>Альтер эго: {alterego}</p>
+         <p>Друзья: {friends}</p>
+         <p>Занятие: {occupation}</p>
+      </div>
+         <div><img src={url} /></div>
+      </>
+
    )
 }
 export default Card
